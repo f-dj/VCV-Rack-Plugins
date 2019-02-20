@@ -37,6 +37,7 @@ struct PingPong : Module
         PARAM_Q,
         PARAM_MIX,
         PARAM_FILTER_MODE,
+	PARAM_FILTER_NEU,
         PARAM_REVERSE,
         nPARAMS
     };
@@ -183,6 +184,7 @@ PingPong_Widget::PingPong_Widget( PingPong *module ) : ModuleWidget(module)
 
     // Filter/Res knobs
     addParam(ParamWidget::create<FilterSelectToggle>( Vec( 66, 55 ), module, PingPong::PARAM_FILTER_MODE, 0.0, 4.0, 0.0 ) );
+   addParam(ParamWidget::create<FilterSelectToggle>( Vec( 66, 55 ), module, PingPong::PARAM_FILTER_NEU, 0.0, 4.0, 0.0 ) );
     addParam(ParamWidget::create<MyCutoffKnob>( Vec( 23, 60 ), module, PingPong::PARAM_CUTOFF, 0.0, 1.0, 0.0 ) );
     addParam(ParamWidget::create<Knob_Purp1_20>( Vec( 73, 79 ), module, PingPong::PARAM_Q, 0.0, 1.0, 0.0 ) );
  
